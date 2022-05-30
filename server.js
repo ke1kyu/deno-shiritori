@@ -7,17 +7,6 @@ var first_word　= new Array("しりとり","りんご","おれんじ","ばな�
 
 let previousWord = first_word[Math.floor( Math.random(4))];
 
-const response = await fetch("/shiritori", {
-
-        
-
-        headers: { "Content-Type": "application/json" },
-
-        body: JSON.stringify({ first_word })
-
-      });
-
-
 
 console.log("Listening on http://localhost:8000");
 
@@ -37,22 +26,26 @@ serve(async (req) => {
 
     const nextWord = requestJson.nextWord;
     
-    if(nextWord.charAt(nextWord.length - 1) ==="ん"){
-      
-      return new Response("「ん」で終わったので終了です", { status: 400 }); 
-      
-    }
+    
 
     if (
 
       nextWord.length > 0 &&
 
-      previousWord.charAt(previousWord.length - 1) !== nextWord.charAt(0)
+      previousWord.charAt(previousWord.length - 1) !== nextWord.charAt(0) &&
+            
+      nextWord.charAt(nextWord.length - 1) !== "ん"
 
     ) {
 
       return new Response("前の単語に続いていません。", { status: 400 });
 
+    }
+          
+    if(nextWord.charAt(nextWord.length - 1) ==="ん"){
+      
+      return new Response("「ん」で終わったので終了です", { status: 400 }); 
+      
     }
 
 
