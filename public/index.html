@@ -24,11 +24,25 @@
 
 
   <script type="module">
+let input = document.querySelector("input");
 
-    input.addEventListener("keyup", function (e) {
+// disable event function
+const disableEvent = e => {
+  e.preventDefault();
+  e.stopPropagation();
+};
+
+// disable paste
+input.addEventListener("paste", disableEvent);
+
+// disable drag&drop
+input.addEventListener("drop", disableEvent);
+
+// remove string
+input.addEventListener("keyup", function(e) {
   let tmp = [];
 
-  this.value.split("").forEach(function (item, i) {
+  this.value.split("").forEach(function(item, i) {    
     if (item.match(/^[\u3040-\u309f]+$/)) {
       tmp.push(item);
     }
