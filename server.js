@@ -3,7 +3,10 @@ import { serve } from "https://deno.land/std@0.138.0/http/server.ts";
 import { serveDir } from "https://deno.land/std@0.138.0/http/file_server.ts";
 
 
-let previousWord = "しりとり";
+let first_word　= new Array("しりとり","りんご","おれんじ","ばなな","すいか")
+
+let previousWord = first_word[Math.floor( Math.random(4))];
+
 
 
 console.log("Listening on http://localhost:8000");
@@ -23,11 +26,11 @@ serve(async (req) => {
     const requestJson = await req.json();
 
     const nextWord = requestJson.nextWord;
-
-    
     
     if(nextWord.charAt(nextWord.length - 1) ==="ん"){
-      return new Response("「ん」がついたので終了です", { status: 400 }); 
+      
+      return new Response("「ん」で終わったので終了です", { status: 400 }); 
+      
     }
 
     if (
