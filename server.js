@@ -7,6 +7,18 @@ var first_word　= new Array("しりとり","りんご","おれんじ","ばな�
 
 let previousWord = first_word[Math.floor( Math.random(4))];
 
+const response = await fetch("/shiritori", {
+
+        
+
+        headers: { "Content-Type": "application/json" },
+
+        body: JSON.stringify({ first_word })
+
+      });
+
+
+
 console.log("Listening on http://localhost:8000");
 
 serve(async (req) => {
