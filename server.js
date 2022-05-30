@@ -3,7 +3,7 @@ import { serve } from "https://deno.land/std@0.138.0/http/server.ts";
 import { serveDir } from "https://deno.land/std@0.138.0/http/file_server.ts";
 
 
-let first_word　= new Array("しりとり","りんご","おれんじ","ばなな","すいか");
+var first_word　= new Array("しりとり","りんご","おれんじ","ばなな","すいか");
 
 let previousWord = first_word[Math.floor( Math.random(4))];
 
