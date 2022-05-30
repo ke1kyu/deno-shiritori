@@ -7,7 +7,7 @@ var first_word　= new Array("しりとり","りんご","おれんじ","ばな�
 
 let previousWord = first_word[Math.floor( Math.random(4))];
 
-
+return new Response(previousWord);
 
 console.log("Listening on http://localhost:8000");
 
