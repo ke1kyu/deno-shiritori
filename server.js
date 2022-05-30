@@ -11,8 +11,6 @@ console.log("Listening on http://localhost:8000");
 serve(async (req) => {
 
   const pathname = new URL(req.url).pathname;
-  
-
 
   if (req.method === "GET" && pathname === "/shiritori") {
 
@@ -25,6 +23,10 @@ serve(async (req) => {
     const requestJson = await req.json();
 
     const nextWord = requestJson.nextWord;
+
+    if(previousWord.charAt(previousWord.length - 1) ==="ん"){
+      return new Response("「ん」がついたので終了です", { status: 400 }); 
+  }
 
     if (
 
