@@ -24,9 +24,11 @@ serve(async (req) => {
 
     const nextWord = requestJson.nextWord;
 
+    
+    
     if(nextWord.charAt(nextWord.length - 1) ==="ん"){
       return new Response("「ん」がついたので終了です", { status: 400 }); 
-  }
+    }
 
     if (
 
