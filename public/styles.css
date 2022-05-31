@@ -4,7 +4,14 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30%;
 }
+
+.main{
+  text-align: center;
+}
+
+
 
 
 /*waveを描画*/
