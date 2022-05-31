@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+body{
+  width:100%; /*ページ全体の幅は100%と指定する*/	
+  text-align:center; /*ページ全体を中央揃えにする*/
+}
+
 h1{
     margin: 0px auto;
 }
