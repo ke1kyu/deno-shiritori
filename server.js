@@ -3,10 +3,7 @@ import { serve } from "https://deno.land/std@0.138.0/http/server.ts";
 import { serveDir } from "https://deno.land/std@0.138.0/http/file_server.ts";
 
 
-var first_word　= new Array("しりとり","りんご","おれんじ","ばなな","すいか");
-
-let previousWord = first_word[Math.floor( Math.random(4))];
-
+let previousWord = "しりとり";
 
 console.log("Listening on http://localhost:8000");
 
@@ -41,6 +38,13 @@ serve(async (req) => {
       return new Response("前の単語に続いていません。", { status: 400 });
 
     }
+    
+    if(previousWord == nextWord){
+    
+      return new Response("同じ言葉は使えません",{ status: 400});
+      
+    }
+    
           
     if(nextWord.charAt(nextWord.length - 1) ==="ん"){
       
