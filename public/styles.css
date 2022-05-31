@@ -4,7 +4,7 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30%;
+  margin: 30% auto auto auto;
 }
 
 .main{
