@@ -11,9 +11,6 @@ h1{
   text-align: center;
 }
 
-
-/*waveの描画範囲*/
-
 canvas{
     position: absolute;
     bottom: 0;
