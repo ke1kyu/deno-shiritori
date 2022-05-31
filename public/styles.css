@@ -9,13 +9,13 @@ h1{
 
 .main{
   text-align: center;
-  transform: scale(1.4);
+  zoom: 1.25;
 }
 
 @media screen and (max-width: 800px){
 
 .main{
-  ztransform: scale(1);
+  zoom: 1;
 }
 
 
