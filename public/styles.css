@@ -9,10 +9,14 @@ h1{
 
 .main{
   text-align: center;
-  zoom: 1.5;
+  scale(1.25);
 }
 
+@media screen and (max-width: 800px){
 
+.main{
+  scale(1);
+}
 
 
 /*waveを描画*/
