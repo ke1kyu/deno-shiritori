@@ -12,7 +12,7 @@ h1{
 }
 
 
-/*waveを描画*/
+/*waveの描画範囲*/
 
 canvas{
     position: absolute;
